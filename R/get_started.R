@@ -1,3 +1,11 @@
+#' Check if the user has their environment variables set up
+#'
+#' Given a list of environment variable names, returns a warning in the console if
+#' the user does not have these set in their .Renviron file
+#'
+#' @param variable_names names of the environment variables in the .Renviron file
+#'
+#' @return for any unmatched environment variables, a stylised message in the console
 check_environment_variable <- function(variable_names) {
   get_packages("cli")
 
