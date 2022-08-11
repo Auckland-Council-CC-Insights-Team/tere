@@ -5,7 +5,7 @@
 #'
 #' @param package_names a character vector of package names
 #'
-#' @return a stylised message in the console
+#' @return A stylised message in the console
 #' @export
 #'
 #' @examples get_started(c("dplyr", "lubridate"))
@@ -26,7 +26,7 @@ get_started <- function(package_names) {
 #'
 #' @param packages a character vector of package names
 #'
-#' @return a stylised message in the console
+#' @return A stylised message in the console
 #' @export
 #'
 #' @examples get_packages(c("dplyr", "lubridate"))
@@ -45,7 +45,7 @@ get_packages <- function(packages) {
 
 #' Retrieve the full path to the local SharePoint File Storage directory
 #'
-#' @return a string containing a Windows directory path
+#' @return A string containing a Windows directory path
 #' @export
 #'
 #' @examples get_file_storage_path()
@@ -67,7 +67,7 @@ get_file_storage_path <- function() {
 #'
 #' @param variable_names a character vector of environment variable names in the .Renviron file
 #'
-#' @return a stylised message in the console indicating failure or success
+#' @return A stylised message in the console indicating failure or success
 check_environment_variable <- function(variable_names) {
   get_packages("cli")
 
