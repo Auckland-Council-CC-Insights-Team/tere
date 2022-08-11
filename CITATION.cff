@@ -1,0 +1,81 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.2.2
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "awhina" in publications use:'
+type: software
+license: MIT
+title: 'awhina: Simplify the Process of Writing R Code at Auckland Council'
+version: 0.0.0.9000
+abstract: A set of utility functions for Auckland Council R developers to get up and
+  running quickly with the language.
+authors:
+- family-names: Durbin
+  given-names: Lee
+  email: lee.durbin@aucklandcouncil.govt.nz
+preferred-citation:
+  type: manual
+  title: 'awhina: Simplify the Process of Writing R Code at Auckland Council'
+  authors:
+  - family-names: Durbin
+    given-names: Lee
+    email: lee.durbin@aucklandcouncil.govt.nz
+  version: 0.0.0.9000
+  abstract: A set of utility functions for Auckland Council R developers to get up
+    and running quickly with the language.
+  contact:
+  - family-names: Durbin
+    given-names: Lee
+    email: lee.durbin@aucklandcouncil.govt.nz
+  license: MIT
+  year: '2022'
+contact:
+- family-names: Durbin
+  given-names: Lee
+  email: lee.durbin@aucklandcouncil.govt.nz
+references:
+- type: software
+  title: cli
+  abstract: 'cli: Helpers for Developing Command Line Interfaces'
+  notes: Imports
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=cli
+- type: software
+  title: here
+  abstract: 'here: A Simpler Way to Find Your Files'
+  notes: Imports
+  authors:
+  - family-names: Müller
+    given-names: Kirill
+    email: krlmlr+r@mailbox.org
+    orcid: https://orcid.org/0000-0002-1416-3412
+  year: '2022'
+  url: https://CRAN.R-project.org/package=here
+- type: software
+  title: stringr
+  abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2022'
+  url: https://CRAN.R-project.org/package=stringr
+- type: software
+  title: utils
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
