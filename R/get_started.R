@@ -40,9 +40,13 @@ get_packages <- function(packages) {
 
   install.packages(missing_packages)
 
-  cli::cli_alert_info(
-    paste0("The following packages have been installed: ", missing_packages)
+  if(length(missing_packages) > 0) {
+    cli::cli_alert_info(
+      paste0("The following packages have been installed: ", missing_packages)
     )
+  } else {
+    cli::cli_alert_info("You already have these packages installed. Ka rawe!")
+  }
 }
 
 #' Retrieve the full path to the local SharePoint File Storage directory
