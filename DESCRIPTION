@@ -1,10 +1,12 @@
 Package: awhina
-Title: What the Package Does (One Line, Title Case)
+Title: Simplify the Process of Writing R Code at Auckland Council
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    c(
+    person("Lee", "Durbin", email="lee.durbin@aucklandcouncil.govt.nz", role = c("aut", "cre")),
+    person("Auckland Council", role = c("cph"))
+    )
+Description: A set of utility functions for Auckland Council R developers to get up and running quickly with the language.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
