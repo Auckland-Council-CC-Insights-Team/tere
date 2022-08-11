@@ -10,9 +10,9 @@ check_environment_variable(variable_names)
 \item{variable_names}{a character vector of environment variable names in the .Renviron file}
 }
 \value{
-A stylised message in the console indicating failure or success
+FALSE if any of the environment variables are not found
 }
 \description{
-Given a list of environment variable names, returns a warning in the console if
-the user does not have these set in their .Renviron file
+Given a list of environment variable names, return FALSE if
+the user does not have any of  these set in their .Renviron file
 }

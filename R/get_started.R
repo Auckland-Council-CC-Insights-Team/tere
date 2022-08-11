@@ -22,7 +22,7 @@ get_started <- function(package_names) {
 
 #' Install any packages that are not already installed
 #'
-#' Compare a list of package names against installed packages, then install any as needed
+#' Compare a list of package names (including utils) against installed packages, then install any as needed
 #'
 #' @param packages a character vector of package names
 #'
@@ -31,6 +31,8 @@ get_started <- function(package_names) {
 #'
 #' @examples get_packages(c("dplyr", "lubridate"))
 get_packages <- function(packages) {
+  append(packages, "utils")
+
   missing_packages <- setdiff(
     packages,
     rownames(installed.packages())
@@ -45,38 +47,36 @@ get_packages <- function(packages) {
 
 #' Retrieve the full path to the local SharePoint File Storage directory
 #'
-#' @return A string containing a Windows directory path
+#' @return A string containing a Windows directory path, or else an error message
 #' @export
 #'
 #' @examples get_file_storage_path()
 get_file_storage_path <- function() {
-  check_environment_variable(c("SHAREPOINT_FILE_STORAGE"))
-  get_packages("stringr")
-  get_packages("here")
+  if(check_environment_variable(c("SHAREPOINT_FILE_STORAGE"))) {
+    get_packages("stringr")
+    get_packages("here")
+    get_packages("cli")
 
-  file_storage_partial <- Sys.getenv("SHAREPOINT_FILE_STORAGE")
-  username <- stringr::str_split(here::here(), "/")[[1]][3]
+    file_storage_partial <- Sys.getenv("SHAREPOINT_FILE_STORAGE")
+    username <- stringr::str_split(here::here(), "/")[[1]][3]
 
-  paste0("C:/Users/", username, file_storage_partial)
+    paste0("C:/Users/", username, file_storage_partial)
+  } else {
+    cli::cli_alert_warning(paste0("Environment variables are missing: SHAREPOINT_FILE_STORAGE"))
+    cli::cli_alert_warning("Please read set-up vignette to configure your system.")
+  }
 }
 
 #' Check if the user has their environment variables set up
 #'
-#' Given a list of environment variable names, returns a warning in the console if
-#' the user does not have these set in their .Renviron file
+#' Given a list of environment variable names, return FALSE if
+#' the user does not have any of  these set in their .Renviron file
 #'
 #' @param variable_names a character vector of environment variable names in the .Renviron file
 #'
-#' @return A stylised message in the console indicating failure or success
+#' @return FALSE if any of the environment variables are not found
 check_environment_variable <- function(variable_names) {
-  get_packages("cli")
-
   if(any(Sys.getenv(variable_names) == "")) {
-    stop(
-      cli::cli_alert_warning(paste0("Environment variables are missing: ", variable_names)),
-      cli::cli_alert_warning("Please read set-up vignette to configure your system.")
-    )
-  } else{
-    cli::cli_alert_info("All environment variables present!")
+    return(FALSE)
   }
 }

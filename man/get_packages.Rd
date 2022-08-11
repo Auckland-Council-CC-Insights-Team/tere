@@ -13,7 +13,7 @@ get_packages(packages)
 A stylised message in the console
 }
 \description{
-Compare a list of package names against installed packages, then install any as needed
+Compare a list of package names (including utils) against installed packages, then install any as needed
 }
 \examples{
 get_packages(c("dplyr", "lubridate"))

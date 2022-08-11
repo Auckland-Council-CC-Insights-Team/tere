@@ -3,3 +3,5 @@
 export(get_file_storage_path)
 export(get_packages)
 export(get_started)
+importFrom(utils,install.packages)
+importFrom(utils,installed.packages)
