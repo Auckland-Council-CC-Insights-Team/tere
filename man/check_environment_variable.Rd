@@ -10,7 +10,7 @@ check_environment_variable(variable_names)
 \item{variable_names}{a character vector of environment variable names in the .Renviron file}
 }
 \value{
-a stylised message in the console indicating failure or success
+A stylised message in the console indicating failure or success
 }
 \description{
 Given a list of environment variable names, returns a warning in the console if

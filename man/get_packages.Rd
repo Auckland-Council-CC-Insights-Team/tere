@@ -10,7 +10,7 @@ get_packages(packages)
 \item{packages}{a character vector of package names}
 }
 \value{
-a stylised message in the console
+A stylised message in the console
 }
 \description{
 Compare a list of package names against installed packages, then install any as needed

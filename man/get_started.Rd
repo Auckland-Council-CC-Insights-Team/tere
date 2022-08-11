@@ -10,7 +10,7 @@ get_started(package_names)
 \item{package_names}{a character vector of package names}
 }
 \value{
-a stylised message in the console
+A stylised message in the console
 }
 \description{
 Given a list of package names, append the purrr package to the list then check if they're all

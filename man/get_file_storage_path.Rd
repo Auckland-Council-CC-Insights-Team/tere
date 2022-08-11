@@ -7,7 +7,7 @@
 get_file_storage_path()
 }
 \value{
-a string containing a Windows directory path
+A string containing a Windows directory path
 }
 \description{
 Retrieve the full path to the local SharePoint File Storage directory
