@@ -3,9 +3,9 @@
 #' Given a list of environment variable names, returns a warning in the console if
 #' the user does not have these set in their .Renviron file
 #'
-#' @param variable_names names of the environment variables in the .Renviron file
+#' @param variable_names a character vector of environment variable names in the .Renviron file
 #'
-#' @return for any unmatched environment variables, a stylised message in the console
+#' @return a stylised message in the console indicating failure or success
 check_environment_variable <- function(variable_names) {
   get_packages("cli")
 
@@ -13,10 +13,20 @@ check_environment_variable <- function(variable_names) {
     stop(
       cli::cli_alert_warning(paste0("Environment variables are missing: ", variable_names)),
       cli::cli_alert_warning("Please read set-up vignette to configure your system.")
+    ) else(
+      cli::cli_alert_info("All environment variables present!")
     )
   }
 }
 
+#' Load packages, installing any as needed
+#'
+#' Given a list of package names, append the purrr package to the list then check if they're all
+#' installed (install them if not). Afterwards, load the packages via library().
+#'
+#' @param package_names a character vector of package names
+#'
+#' @return a stylised message in the console
 get_started <- function(package_names) {
   package_names_with_purrr <- append(package_names, "purrr")
   get_packages(package_names_with_purrr)
@@ -24,6 +34,8 @@ get_started <- function(package_names) {
   for(p in package_names) {
     library(p, character.only = TRUE)
   }
+
+  cli::cli_alert_info("All packages installed and loaded. Happy coding!")
 }
 
 get_packages <- function(packages) {
