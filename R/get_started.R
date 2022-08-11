@@ -76,7 +76,7 @@ get_file_storage_path <- function() {
 #'
 #' @return FALSE if any of the environment variables are not found
 check_environment_variable <- function(variable_names) {
-  if(any(Sys.getenv(variable_names) == "")) {
+  if(length(variable_names) | any(Sys.getenv(variable_names) == "")) {
     return(FALSE)
   }
 }
