@@ -75,8 +75,8 @@ check_environment_variable <- function(variable_names) {
     stop(
       cli::cli_alert_warning(paste0("Environment variables are missing: ", variable_names)),
       cli::cli_alert_warning("Please read set-up vignette to configure your system.")
-    ) else(
-      cli::cli_alert_info("All environment variables present!")
     )
+  } else{
+    cli::cli_alert_info("All environment variables present!")
   }
 }
