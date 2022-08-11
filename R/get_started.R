@@ -74,9 +74,11 @@ get_file_storage_path <- function() {
 #'
 #' @param variable_names a character vector of environment variable names in the .Renviron file
 #'
-#' @return FALSE if any of the environment variables are not found
+#' @return FALSE if any of the environment variables are not found, otherwise TRUE
 check_environment_variable <- function(variable_names) {
   if(length(variable_names) | any(Sys.getenv(variable_names) == "")) {
     return(FALSE)
+  } else {
+    return(TRUE)
   }
 }
