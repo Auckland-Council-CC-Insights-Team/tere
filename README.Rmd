@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# awhina
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+The goal of awhina is to support kaimahi at Auckland Council when they work with the R programming language.
+
+## Installation
+
+You can install the development version of awhina from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("lddurbinAC/awhina")
+```
+
+## Example
+
+This is a basic example which shows you how to install and load the most useful R packages (known collectively as the tidyverse),
+and how to store and retrieve that path to your team's locally-sync'd SharePoint Document Library.
+
+```{r example}
+library(awhina)
+get_started("tidyverse")
+
+create_environment_variable("path/to/my/sharepoint/directory")
+my_files <- get_file_storage_path()
+```
