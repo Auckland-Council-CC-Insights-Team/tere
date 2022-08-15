@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_started.R
 \name{get_file_storage_path}
 \alias{get_file_storage_path}
-\title{Retrieve the full path to the local SharePoint File Storage directory}
+\title{Retrieve the full path to the local SharePoint directory where your team's files are stored}
 \usage{
 get_file_storage_path()
 }
@@ -10,7 +10,7 @@ get_file_storage_path()
 A string containing a Windows directory path, or else an error message
 }
 \description{
-Retrieve the full path to the local SharePoint File Storage directory
+Retrieve the full path to the local SharePoint directory where your team's files are stored
 }
 \examples{
 get_file_storage_path()

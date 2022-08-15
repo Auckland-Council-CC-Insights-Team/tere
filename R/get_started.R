@@ -49,25 +49,20 @@ get_packages <- function(packages) {
   }
 }
 
-#' Retrieve the full path to the local SharePoint File Storage directory
+#' Retrieve the full path to the local SharePoint directory where your team's files are stored
 #'
 #' @return A string containing a Windows directory path, or else an error message
 #' @export
 #'
 #' @examples get_file_storage_path()
 get_file_storage_path <- function() {
+  readRenviron(".Renviron")
+
   if(check_environment_variable(c("SHAREPOINT_FILE_STORAGE"))) {
-    get_packages("stringr")
-    get_packages("here")
-    get_packages("cli")
-
-    file_storage_partial <- Sys.getenv("SHAREPOINT_FILE_STORAGE")
-    username <- stringr::str_split(here::here(), "/")[[1]][3]
-
-    paste0("C:/Users/", username, file_storage_partial)
+    Sys.getenv("SHAREPOINT_FILE_STORAGE")
   } else {
-    cli::cli_alert_warning(paste0("Environment variables are missing: SHAREPOINT_FILE_STORAGE"))
-    cli::cli_alert_warning("Please read set-up vignette to configure your system.")
+    cli::cli_alert_warning("Environment variables are missing: SHAREPOINT_FILE_STORAGE")
+    cli::cli_alert_warning("Please call create_environment_variable() and pass the path to your SharePoint directory.")
   }
 }
 
@@ -80,15 +75,32 @@ get_file_storage_path <- function() {
 #'
 #' @return FALSE if any of the environment variables are not found, otherwise TRUE
 check_environment_variable <- function(variable_names) {
-  if(!is.character) {
-    stop(
-      cli::cli_alert_warning("Your environment variable names are invalid. Did you pass a number instead of a character string?")
-    )
-  }
-
-  if(length(variable_names) | any(Sys.getenv(variable_names) == "")) {
+  if(length(variable_names) == 0 | any(Sys.getenv(variable_names) == "")) {
     return(FALSE)
   } else {
     return(TRUE)
   }
+}
+
+#' Create a .Renviron file to help point to your SharePoint document library
+#'
+#' Given a path to your locally-sync'd SharePoint Document Library, create a .Renviron
+#' file in the project root to store that information for future reference.
+#'
+#' @param value A character string containing the path to your SharePoint Document Library
+#' as sync'd to your local machine
+#'
+#' @return A stylised message in the console
+#' @export
+#'
+#' @examples create_environment_variable("C:/path/to/sharepoint/directory")
+create_environment_variable <- function(value) {
+  cat(
+    paste0("SHAREPOINT_FILE_STORAGE='", value, "'"),
+    file = here::here(".Renviron")
+  )
+
+  return(
+    cli::cli_alert_info("Successfully created the .Renviron file to store your directory path.")
+    )
 }
