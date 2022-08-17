@@ -4,7 +4,10 @@
 \alias{create_environment_variable}
 \title{Create a .Renviron file that points to your locally-synchronised SharePoint Document Library}
 \usage{
-create_environment_variable()
+create_environment_variable(dir_ref)
+}
+\arguments{
+\item{dir_ref}{A name for your SharePoint Document Library, using only capital letters and no spaces}
 }
 \value{
 A stylised message in the console
@@ -14,6 +17,6 @@ Given a path to your locally-sync'd SharePoint Document Library, create a .Renvi
 file in the project root to store that information for future reference.
 }
 \examples{
-create_environment_variable()
+create_environment_variable("MY_SHAREPOINT_FILES")
 file.remove(".Renviron")
 }

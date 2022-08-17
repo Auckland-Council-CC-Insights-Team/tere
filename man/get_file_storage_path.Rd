@@ -4,7 +4,10 @@
 \alias{get_file_storage_path}
 \title{Retrieve the full path to the local SharePoint directory where your team's files are stored}
 \usage{
-get_file_storage_path()
+get_file_storage_path(dir_ref)
+}
+\arguments{
+\item{dir_ref}{The name you assigned for your SharePoint Document Library when you called create_environment_variable()}
 }
 \value{
 A string containing a Windows directory path, or else an error message
