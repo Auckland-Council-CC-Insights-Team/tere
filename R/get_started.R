@@ -87,16 +87,17 @@ check_environment_variable <- function(variable_names) {
 #' Given a path to your locally-sync'd SharePoint Document Library, create a .Renviron
 #' file in the project root to store that information for future reference.
 #'
-#' @param value A character string containing the path to your SharePoint Document Library
-#' as sync'd to your local machine
-#'
 #' @return A stylised message in the console
 #' @export
 #'
-#' @examples create_environment_variable("C:/path/to/sharepoint/directory")
-create_environment_variable <- function(value) {
+#' @examples create_environment_variable()
+create_environment_variable <- function() {
+  value <- readline("Paste the path to your locally-synchronised SharePoint directory: ")
+
+  dir_path <- gsub("\\\\", "/", value)
+
   cat(
-    paste0("SHAREPOINT_FILE_STORAGE='", value, "'"),
+    paste0("SHAREPOINT_FILE_STORAGE='", dir_path, "'"),
     file = here::here(".Renviron")
   )
 
