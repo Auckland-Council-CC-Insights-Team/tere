@@ -8,6 +8,13 @@
 \description{
 A set of utility functions for Auckland Council R developers to get up and running quickly with the language.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://lddurbinac.github.io/awhina/}
+}
+
+}
 \author{
 \strong{Maintainer}: Lee Durbin \email{lee.durbin@aucklandcouncil.govt.nz}
 
