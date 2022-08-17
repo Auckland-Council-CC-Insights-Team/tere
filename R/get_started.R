@@ -82,7 +82,7 @@ check_environment_variable <- function(variable_names) {
   }
 }
 
-#' Create a .Renviron file to help point to your SharePoint document library
+#' Create a .Renviron file that points to your locally-synchronised SharePoint Document Library
 #'
 #' Given a path to your locally-sync'd SharePoint Document Library, create a .Renviron
 #' file in the project root to store that information for future reference.
@@ -91,6 +91,7 @@ check_environment_variable <- function(variable_names) {
 #' @export
 #'
 #' @examples create_environment_variable()
+#' file.remove(".Renviron")
 create_environment_variable <- function() {
   value <- readline("Paste the path to your locally-synchronised SharePoint directory: ")
 

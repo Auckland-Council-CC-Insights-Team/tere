@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_started.R
 \name{create_environment_variable}
 \alias{create_environment_variable}
-\title{Create a .Renviron file to help point to your SharePoint document library}
+\title{Create a .Renviron file that points to your locally-synchronised SharePoint Document Library}
 \usage{
 create_environment_variable()
 }
@@ -15,4 +15,5 @@ file in the project root to store that information for future reference.
 }
 \examples{
 create_environment_variable()
+file.remove(".Renviron")
 }
