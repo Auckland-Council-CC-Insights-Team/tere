@@ -56,7 +56,7 @@ get_packages <- function(packages) {
 #' @return A string containing a Windows directory path, or else an error message
 #' @export
 #'
-#' @examples get_file_storage_path()
+#' @examples \dontrun{get_file_storage_path()}
 get_file_storage_path <- function(dir_ref) {
   if (file.exists(".Renviron")) {
     readRenviron(".Renviron")
@@ -99,8 +99,7 @@ check_environment_variable <- function(variable_names) {
 #' @return A stylised message in the console
 #' @export
 #'
-#' @examples create_environment_variable("MY_SHAREPOINT_FILES")
-#' file.remove(".Renviron")
+#' @examples \dontrun {create_environment_variable("MY_SHAREPOINT_FILES")}
 create_environment_variable <- function(dir_ref) {
   value <- readline("Paste the path to your locally-synchronised SharePoint directory: ")
 
