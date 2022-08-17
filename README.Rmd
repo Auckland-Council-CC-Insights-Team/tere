@@ -38,7 +38,4 @@ and how to securely store and retrieve the path to your team's locally-sync'd Sh
 ```{r example}
 library(awhina)
 get_started("tidyverse")
-
-create_environment_variable("MY_SHAREPOINT_FILES")
-my_files <- get_file_storage_path("MY_SHAREPOINT_FILES")
 ```

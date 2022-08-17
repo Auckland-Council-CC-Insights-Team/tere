@@ -44,11 +44,4 @@ get_started("tidyverse")
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 #> ℹ All packages installed and loaded. Happy coding!
-
-create_environment_variable("MY_SHAREPOINT_FILES")
-#> Paste the path to your locally-synchronised SharePoint directory:
-#> ℹ Successfully created the .Renviron file to store your directory path.
-my_files <- get_file_storage_path("MY_SHAREPOINT_FILES")
-#> ! You have a .Renviron file but the following environment variables are missing: MY_SHAREPOINT_FILES
-#> ! Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.
 ```
