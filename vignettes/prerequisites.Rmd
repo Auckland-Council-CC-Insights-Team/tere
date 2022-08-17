@@ -1,5 +1,5 @@
 ---
-title: "prerequisites"
+title: "Getting Started with R at Te Kaunihera o Tāmaki Makaurau"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{prerequisites}
