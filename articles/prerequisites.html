@@ -71,7 +71,7 @@
     
     
 <div class="section level2">
-<h2 id="welcome">Welcome<a class="anchor" aria-label="anchor" href="#welcome"></a>
+<h2 id="hello-whats-this">Hello, what’s this?<a class="anchor" aria-label="anchor" href="#hello-whats-this"></a>
 </h2>
 <p>Kia ora, and congratulations on choosing to use the R programming language at Te Kaunihera o Tāmaki Makaurau (Auckland Council)!</p>
 </div>
@@ -82,15 +82,122 @@
 <p>You’re probably familiar with using Excel for working with data. Excel is a powerful and versatile tool that we all have access to, but I’m guessing you’re here because you see the limitations of that software:</p>
 <ul>
 <li>
-<strong>Things can go wrong easily</strong>: a simple mouse click can change important data; a stray keyboard entry can erase a crucial formula in cell B16, without which the value you need in cell AB16 won’t show. Nobody wants this.</li>
+<strong>Things can go wrong easily</strong>: a simple mouse click can change important data; a stray keyboard entry can erase a crucial formula in cell B:16, without which the value you need in cell AB:16 won’t show. Nobody wants this.</li>
 <li>
 <strong>You can’t reproduce things</strong>: all that work you put into preparing a <em>beautiful</em> table from this year’s data? You’ll need to do a lot of copying, pasting, and tweaking to get it working with next year’s data. Plus: only you understand how everything in those cells work.</li>
 <li>
-<strong>It keeps crashing</strong>: as your spreadsheets get bigger and bigger, as you start adding pivot tables and charts and all kinds of things it’s going to take a while to load that thing onto your screen, and you run the risk of losing everything when it crashes as you’re making important changes</li>
+<strong>It keeps crashing</strong>: as your spreadsheets get bigger and bigger, as you start adding pivot tables and charts and all kinds of things it’s going to take a while to load that thing onto your screen, and you run the risk of losing everything when it crashes as you’re making important changes.</li>
 <li>
 <strong>It changes things in unexpected ways</strong>: you pasted in some dates that Excel thinks are number, or numbers it thinks are dates. Sometimes, by trying to be helpful, Excel is making your life harder. I feel your pain.</li>
 </ul>
-<p>If it feels like you’re fighting against the tool, or that it feels like it’s taken too long to do what you need, then you’re in the right place.</p>
+<p>If it feels like you’re fighting against the tool, or that it feels like it’s taken too long to do what you need, then you’re in the right place. By choosing to work with data in R, you’ll experience many benefits over time:</p>
+<ul>
+<li>
+<strong>You’re in control</strong>: R keeps your data analysis separate from the data itself; this means you’re never in danger of losing data, or accidentally changing data because you never need to open the data file to begin with. If your R script isn’t doing what you’d intended, no sweat: just change the script, knowing your original data source remains untouched.</li>
+<li>
+<strong>You don’t need to re-invent the wheel every time</strong>: R is built on functions, and these functions can be used multiple times to achieve similar outcomes from different data sources. You can write a single script that will load a data set, tidy it up, produce beautiful charts, and output the files you need. If you need those same charts and files from next year’s data, just point your script to that data instead… and you’re done!</li>
+<li>
+<strong>It’s not going to give your computer a hard time</strong>: R will read all kinds of data files, no matter how big they are. It’s a programming language specifically designed to work with lots of data, but because the scripts you write are just little files of text you’re not going to lose work because the file crashes.</li>
+<li>
+<strong>It will only do what you tell it to do</strong>: this comes back to our first point; because you’ll be working with data using code when you choose to use R it means it will only perform the operations you tell it to, so no more re-formatted cells.</li>
+</ul>
+<p>Best of all, R is completely free! It’s also supported by a huge community of users around the world who are more than happy to help.</p>
+<p>Oh, and did I mention it was created right here in Tāmaki Makaurau in the 1990s? You have <a href="https://www.teaomaori.news/statistics-legend-ross-ihaka-reflects-on-his-revolutionary-software" class="external-link">Ross Ihaka</a> (Ngāti Kahungunu, Rangitāne) to thank for that.</p>
+</div>
+<div class="section level2">
+<h2 id="alright-im-convinced-how-do-i-get-started">Alright I’m convinced, how do I get started?<a class="anchor" aria-label="anchor" href="#alright-im-convinced-how-do-i-get-started"></a>
+</h2>
+<p>Ka rawe, that’s the spirit! Let’s get R and R Studio Desktop loaded onto your machine. You’ll find both of them in Software Centre: just search “R for Windows” and “RStudio” if you can’t see them.</p>
+<div class="figure">
+<img src="softwarecentre_r.png" title="Software Centre screenshot" alt=""><p class="caption">R for Windows and R Studio Desktop can be found in Software Centre; the versions you see might be different from the time of writing</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="whats-this-about-r-studio">What’s this about R Studio?<a class="anchor" aria-label="anchor" href="#whats-this-about-r-studio"></a>
+</h2>
+<p>Oh, that’s right. R Studio Desktop is something called an integrated development environment, or IDE. It’s just a fancy way of describing a bit of software that makes it easy to write R code. You don’t have to install R Studio Desktop, but it will make your life a lot easier as you get stuck into writing code using R.</p>
+</div>
+<div class="section level2">
+<h2 id="sounds-good--theyre-installed-what-next">Sounds good. They’re installed, what next?<a class="anchor" aria-label="anchor" href="#sounds-good--theyre-installed-what-next"></a>
+</h2>
+<p>You’ve made the first step, but there’s one more thing we should install that you’ll thank your future self for: Git. This isn’t available in Software Centre, but you can download it for free from the <a href="https://gitforwindows.org/" class="external-link">Git for Windows website</a>. Go ahead and click that big ol’ download button and keep hitting “Next” until it’s done.</p>
+</div>
+<div class="section level2">
+<h2 id="git-why-do-i-need-that">Git? Why do I need that?<a class="anchor" aria-label="anchor" href="#git-why-do-i-need-that"></a>
+</h2>
+<p>Git is a version control system.</p>
+<p>Do you find yourself saving spreadsheets as “version 1”, “version 2”, “final version”, “final FINAL version”, “final FINAL version edited”? Yeah, you don’t need to do that anymore when you use R + Git together. Git will keep track of your files as you change them, so if you need to revert to an earlier version (or just consult an earlier version to understand how you got to where you are with your code), then Git will allow you to do that.</p>
+<p>Did I mention it’s free? Open source is a beautiful thing.</p>
+</div>
+<div class="section level2">
+<h2 id="okay-ive-got-r-and-r-studio-and-git--is-there-anything-else-i-need">Okay, I’ve got R and R Studio and Git. Is there anything else I need?<a class="anchor" aria-label="anchor" href="#okay-ive-got-r-and-r-studio-and-git--is-there-anything-else-i-need"></a>
+</h2>
+<p>You’re doing great, and you’ve got everything you need… for now. Let’s get cracking with R by installing your very first package. Fire up R Studio Desktop and in the cons–</p>
+</div>
+<div class="section level2">
+<h2 id="woah-slow-down--what-the-heck-is-a-package">Woah slow down. What the heck is a package?<a class="anchor" aria-label="anchor" href="#woah-slow-down--what-the-heck-is-a-package"></a>
+</h2>
+<p>Oh, sorry. A package is a bunch of code written by someone else to help you do things in R. R is built from packages, so you’re going to be using a lot of them. I wrote one myself to help kaimahi get up and running with coding in R. It’s called awhina, because it <em>supports</em> as you start working in R. In fact, this web page you’re looking at was built as part of that package. Pretty cool huh?</p>
+</div>
+<div class="section level2">
+<h2 id="thats-very-nice-but-isnt-r-good-enough-on-its-own-without-these-packages">That’s very nice, but isn’t R good enough on its own without these packages?<a class="anchor" aria-label="anchor" href="#thats-very-nice-but-isnt-r-good-enough-on-its-own-without-these-packages"></a>
+</h2>
+<p>When you install R, you’re installing what’s called Base R or Core R. Once upon a time this was the code written by Ross Ihaka and his co-creator Robert Gentleman at the University of Auckland, but it’s evolved a lot since then. Still, there’s only so much that base code can do, and it all has to be maintained by a dedicated group of volunteers; it’s not in their interests for the base code to do all kinds of things that may only benefit a few people, so that’s why we have packages.</p>
+</div>
+<div class="section level2">
+<h2 id="so-packages-are-like-add-ons-to-the-original-r-code">So packages are like add-ons to the original R code?<a class="anchor" aria-label="anchor" href="#so-packages-are-like-add-ons-to-the-original-r-code"></a>
+</h2>
+<p>I hadn’t thought of it like that before, that’s actually very insightful.</p>
+</div>
+<div class="section level2">
+<h2 id="thanks--anyway-you-were-saying">Thanks. Anyway, you were saying…?<a class="anchor" aria-label="anchor" href="#thanks--anyway-you-were-saying"></a>
+</h2>
+<p>Oh right, yes let’s install your very first package! To do this you’ll need to write the following command in the console: <code>install.packages("devtools")</code></p>
+</div>
+<div class="section level2">
+<h2 id="i-have-two-questions--first-wheres-the-console">I have two questions. First, where’s the console?<a class="anchor" aria-label="anchor" href="#i-have-two-questions--first-wheres-the-console"></a>
+</h2>
+<p>Ah, yes the console is that window at the bottom left. It looks like this:</p>
+<div class="figure">
+<img src="rstudio-console.png" title="R Studio Desktop screenshot" alt=""><p class="caption">The R Studio Desktop console is on the bottom left</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="got-it--second-question-why-do-i-seem-to-be-installing-something-called-devtools-didnt-you-say-your-package-is-called-awhina">Got it. Second question: why do I seem to be installing something called “devtools”? Didn’t you say your package is called “awhina”?<a class="anchor" aria-label="anchor" href="#got-it--second-question-why-do-i-seem-to-be-installing-something-called-devtools-didnt-you-say-your-package-is-called-awhina"></a>
+</h2>
+<p>Good spot! That’s right, we’re installing devtools first <em>in order</em> to install awhina. You see, awhina was only designed for kaimahi at Auckland Council so it’ll never be “officially” released. Because of this, we need a special command to install it that’s vailable to us via the devtools package… which, as you can probably guess, <em>does</em> have an “official” release so we can use <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> to get that one.</p>
+</div>
+<div class="section level2">
+<h2 id="installing-a-package-to-install-a-package--gotcha--alright-ive-installed-devtools-so-how-do-i-get-awhina">Installing a package to install a package. Gotcha. Alright I’ve installed devtools, so how do I get awhina?<a class="anchor" aria-label="anchor" href="#installing-a-package-to-install-a-package--gotcha--alright-ive-installed-devtools-so-how-do-i-get-awhina"></a>
+</h2>
+<p>That’s easy, just pop the following command into the console and hit Enter: <code>devtools::install_github("lddurbinAC/awhina")</code></p>
+</div>
+<div class="section level2">
+<h2 id="done-now-what">Done! Now what?<a class="anchor" aria-label="anchor" href="#done-now-what"></a>
+</h2>
+<p>Well my friend, that’s up to you. You’ve got R, R Studio Desktop, Git for Windows, and two handy packages (devtools and awhina). The next steps are beyond the scope of this little primer, although there’s probably one other thing you might wnant to consider…</p>
+</div>
+<div class="section level2">
+<h2 id="not-another-package">Not another package?<a class="anchor" aria-label="anchor" href="#not-another-package"></a>
+</h2>
+<p>Well, there are always other packages to install but no. You should probably synchronise your team’s SharePoint Document Library to your local machine.</p>
+</div>
+<div class="section level2">
+<h2 id="that-makes-no-sense">That makes no sense<a class="anchor" aria-label="anchor" href="#that-makes-no-sense"></a>
+</h2>
+<p>Ah, that might be because your team aren’t managing files via SharePoint. You should probably look into that. ICT can help.</p>
+</div>
+<div class="section level2">
+<h2 id="just-for-arguments-sake-lets-assume-we-are-doing-that--then-what">Just for argument’s sake, let’s assume we <em>are</em> doing that. Then what?<a class="anchor" aria-label="anchor" href="#just-for-arguments-sake-lets-assume-we-are-doing-that--then-what"></a>
+</h2>
+<p>That’s the synchronising bit. In order for R to read the data files your team is working with, they need to be available on your local machine. To achieve this, navigate to your team’s SharePoint Document Library and click the “Sync” option at the top. It looks like this:</p>
+<p><img src="sharepoint_sync.png" title="SharePoint Sync button" alt="The Sync button will make the files in SharePoint available on your computer"> You may need to sign into OneDrive on your machine. Once that’s all done, open up Windows Explorer and you’ll see Auckland Council on the left, above your OneDrive folder. Click to expand and you should see your team’s SharePoint Document Library there.</p>
+</div>
+<div class="section level2">
+<h2 id="great-where-do-i-go-for-further-help-with-all-of-this">Great! Where do I go for further help with all of this?<a class="anchor" aria-label="anchor" href="#great-where-do-i-go-for-further-help-with-all-of-this"></a>
+</h2>
+<p>You’re in the right place! Browse around this website and you should find heaps of useful info.</p>
+<p>Good luck my friend!</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
