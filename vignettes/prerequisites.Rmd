@@ -1,0 +1,21 @@
+---
+title: "prerequisites"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{prerequisites}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(awhina)
+```
+
+Kia ora, and congratulations on choosing to use the R programming language at Te Kaunihera o Tāmaki Makaurau (Auckland Council).
