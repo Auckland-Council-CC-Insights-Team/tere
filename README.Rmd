@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/lddurbinAC/awhina/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/lddurbinAC/awhina/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 The goal of awhina is to support kaimahi at Auckland Council when they work with the R programming language.
