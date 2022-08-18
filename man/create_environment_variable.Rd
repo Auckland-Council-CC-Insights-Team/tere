@@ -17,5 +17,5 @@ Given a path to your locally-sync'd SharePoint Document Library, create a .Renvi
 file in the project root to store that information for future reference.
 }
 \examples{
-\dontrun {create_environment_variable("MY_SHAREPOINT_FILES")}
+\dontrun{create_environment_variable("MY_SHAREPOINT_FILES")}
 }

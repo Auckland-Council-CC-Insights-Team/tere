@@ -15,6 +15,3 @@ A string containing a Windows directory path, or else an error message
 \description{
 Retrieve the full path to the local SharePoint directory where your team's files are stored
 }
-\examples{
-\dontrun{get_file_storage_path()}
-}
