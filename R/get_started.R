@@ -56,7 +56,7 @@ get_packages <- function(packages) {
 #' @return A string containing a Windows directory path, or else an error message
 #' @export
 #'
-#' @examples \dontrun{get_file_storage_path()}
+#' @examples \dontrun{get_file_storage_path("MY_SHAREPOINT_FILES)}
 get_file_storage_path <- function(dir_ref) {
   if (file.exists(".Renviron")) {
     readRenviron(".Renviron")
