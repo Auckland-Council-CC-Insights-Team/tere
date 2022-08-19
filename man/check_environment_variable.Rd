@@ -7,12 +7,12 @@
 check_environment_variable(variable_names)
 }
 \arguments{
-\item{variable_names}{a character vector of environment variable names in the .Renviron file}
+\item{variable_names}{a character vector of environment variable names in the .Renviron file.}
 }
 \value{
-FALSE if any of the environment variables are not found, otherwise TRUE
+FALSE if any of the environment variables are not found, otherwise TRUE.
 }
 \description{
 Given a list of environment variable names, return FALSE if
-the user does not have any of  these set in their .Renviron file
+the user does not have any of  these set in their .Renviron file.
 }

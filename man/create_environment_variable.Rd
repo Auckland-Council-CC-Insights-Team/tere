@@ -7,10 +7,10 @@
 create_environment_variable(dir_ref)
 }
 \arguments{
-\item{dir_ref}{A name for your SharePoint Document Library, using only capital letters and no spaces}
+\item{dir_ref}{A name for your SharePoint Document Library, using only capital letters and no spaces.}
 }
 \value{
-A stylised message in the console
+A stylised message in the console.
 }
 \description{
 Given a path to your locally-sync'd SharePoint Document Library, create a .Renviron

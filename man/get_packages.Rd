@@ -7,13 +7,13 @@
 get_packages(packages)
 }
 \arguments{
-\item{packages}{a character vector of package names}
+\item{packages}{a character vector of package names.}
 }
 \value{
-A stylised message in the console
+A stylised message in the console.
 }
 \description{
-Compare a list of package names (including utils) against installed packages, then install any as needed
+Compare a list of package names (including utils) against installed packages, then install any as needed.
 }
 \examples{
 get_packages(c("dplyr", "lubridate"))

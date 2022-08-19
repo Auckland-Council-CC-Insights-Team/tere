@@ -4,14 +4,19 @@
 \alias{get_file_storage_path}
 \title{Retrieve the full path to the local SharePoint directory where your team's files are stored}
 \usage{
-get_file_storage_path(dir_ref)
+get_file_storage_path(dir_ref, renviron_path = here::here(".Renviron"))
 }
 \arguments{
-\item{dir_ref}{The name you assigned for your SharePoint Document Library when you called create_environment_variable()}
+\item{dir_ref}{The name you assigned for your SharePoint Document Library when you called create_environment_variable().}
+
+\item{renviron_path}{The path to the .Renviron file, defaults to your project's home directory.}
 }
 \value{
-A string containing a Windows directory path, or else an error message
+A string containing a Windows directory path, or else an error message.
 }
 \description{
 Retrieve the full path to the local SharePoint directory where your team's files are stored
+}
+\examples{
+\dontrun{get_file_storage_path("MY_SHAREPOINT_FILES")}
 }

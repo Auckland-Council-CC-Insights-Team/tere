@@ -3,9 +3,9 @@
 #' Given a list of package names, append the purrr package to the list then check if they're all
 #' installed (install them if not). Afterwards, load the packages via library().
 #'
-#' @param package_names a character vector of package names
+#' @param package_names a character vector of package names.
 #'
-#' @return A stylised message in the console
+#' @return A stylised message in the console.
 #' @export
 #'
 #' @examples get_started(c("dplyr", "lubridate"))
@@ -22,11 +22,11 @@ get_started <- function(package_names) {
 
 #' Install any packages that are not already installed
 #'
-#' Compare a list of package names (including utils) against installed packages, then install any as needed
+#' Compare a list of package names (including utils) against installed packages, then install any as needed.
 #'
-#' @param packages a character vector of package names
+#' @param packages a character vector of package names.
 #'
-#' @return A stylised message in the console
+#' @return A stylised message in the console.
 #' @export
 #'
 #' @examples get_packages(c("dplyr", "lubridate"))
@@ -51,36 +51,55 @@ get_packages <- function(packages) {
 
 #' Retrieve the full path to the local SharePoint directory where your team's files are stored
 #'
-#' @param dir_ref The name you assigned for your SharePoint Document Library when you called create_environment_variable()
+#' @param dir_ref The name you assigned for your SharePoint Document Library when you called create_environment_variable().
+#' @param renviron_path The path to the .Renviron file, defaults to your project's home directory.
 #'
-#' @return A string containing a Windows directory path, or else an error message
+#' @return A string containing a Windows directory path, or else an error message.
 #' @export
 #'
-#' @examples \dontrun{get_file_storage_path("MY_SHAREPOINT_FILES)}
-get_file_storage_path <- function(dir_ref) {
-  if (file.exists(".Renviron")) {
-    readRenviron(".Renviron")
+#' @examples \dontrun{get_file_storage_path("MY_SHAREPOINT_FILES")}
+get_file_storage_path <- function(dir_ref, renviron_path = here::here(".Renviron")) {
+  check_renviron(renviron_path)
+  get_renviron(dir_ref)
+}
 
-    if(check_environment_variable(c(dir_ref))) {
-      Sys.getenv(dir_ref)
-    } else {
-      cli::cli_alert_warning(paste0("You have a .Renviron file but the following environment variables are missing: ", dir_ref))
-      cli::cli_alert_warning("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.")
-    }
+#' Check that a .Renviron exists
+#'
+#' @param renviron_path Path to the .Renviron file.
+#'
+#' @return Scalar logical indicating if the file was read successfully. Returned invisibly.
+check_renviron <- function(renviron_path) {
+  if (file.exists(renviron_path)) {
+    readRenviron(renviron_path)
+    cli::cli_alert_info("You have a .Renviron file! Reading it now...")
   } else {
-    cli::cli_alert_warning("You do not have a .Renviron file.")
+    cli::cli_alert_warning("You do not have a .Renviron file, or you passed the incorrect directory path.")
     cli::cli_alert_warning("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.")
+  }
+}
+
+#' Obtain the values of environment variables
+#'
+#' @param var_name Character vector of environment variable name(s).
+#'
+#' @return A vector of the same length as var_name.
+get_renviron <- function(var_name) {
+  if(check_environment_variable(c(var_name))) {
+    Sys.getenv(var_name)
+  } else {
+    cli::cli_alert_warning(paste0("You have a .Renviron file but the following environment variables are missing: ", var_name))
+    cli::cli_alert_warning("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass, for example, the path to your SharePoint directory when prompted.")
   }
 }
 
 #' Check if the user has their environment variables set up
 #'
 #' Given a list of environment variable names, return FALSE if
-#' the user does not have any of  these set in their .Renviron file
+#' the user does not have any of  these set in their .Renviron file.
 #'
-#' @param variable_names a character vector of environment variable names in the .Renviron file
+#' @param variable_names a character vector of environment variable names in the .Renviron file.
 #'
-#' @return FALSE if any of the environment variables are not found, otherwise TRUE
+#' @return FALSE if any of the environment variables are not found, otherwise TRUE.
 check_environment_variable <- function(variable_names) {
   if(length(variable_names) == 0 | any(Sys.getenv(variable_names) == "")) {
     return(FALSE)
@@ -94,9 +113,9 @@ check_environment_variable <- function(variable_names) {
 #' Given a path to your locally-sync'd SharePoint Document Library, create a .Renviron
 #' file in the project root to store that information for future reference.
 #'
-#' @param dir_ref A name for your SharePoint Document Library, using only capital letters and no spaces
+#' @param dir_ref A name for your SharePoint Document Library, using only capital letters and no spaces.
 #'
-#' @return A stylised message in the console
+#' @return A stylised message in the console.
 #' @export
 #'
 #' @examples \dontrun{create_environment_variable("MY_SHAREPOINT_FILES")}
