@@ -28,6 +28,9 @@
     <loc>https://lddurbinac.github.io/awhina/reference/check_environment_variable.html</loc>
   </url>
   <url>
+    <loc>https://lddurbinac.github.io/awhina/reference/check_renviron.html</loc>
+  </url>
+  <url>
     <loc>https://lddurbinac.github.io/awhina/reference/create_environment_variable.html</loc>
   </url>
   <url>
@@ -35,6 +38,9 @@
   </url>
   <url>
     <loc>https://lddurbinac.github.io/awhina/reference/get_packages.html</loc>
+  </url>
+  <url>
+    <loc>https://lddurbinac.github.io/awhina/reference/get_renviron.html</loc>
   </url>
   <url>
     <loc>https://lddurbinac.github.io/awhina/reference/get_started.html</loc>
