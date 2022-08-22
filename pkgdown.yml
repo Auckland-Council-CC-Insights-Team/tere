@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   prerequisites: prerequisites.html
-last_built: 2022-08-19T11:18Z
+last_built: 2022-08-22T08:29Z
 urls:
   reference: https://lddurbinac.github.io/awhina/reference
   article: https://lddurbinac.github.io/awhina/articles
