@@ -61,6 +61,7 @@ It's a good idea to set a default working directory in R Studio. This is where y
 First, I suggest creating a new folder in your OneDrive and name it something like "Code". Next, open R Studio Desktop and select Tools from the top menu, then click on Global Options. You'll see a screen pop up like the one below, with a Browse button next to where the default working directory path shows up. Go ahead and click Browse, then navigate to the "Code" (or similar) folder you just created and click "Open".
 
 ![You can point R Studio Desktop to your default working directory in Global Settings](working_directory_settings.png "R Studio Desktop Global Settings screenshot")
+
 It's not a bad idea to select "Never" next to the option "Restore data to .Rdata workspace on exit" while you're there, which makes sure you're starting from cleaning slate when you re-open R Studio Desktop in future.
 
 # Sweet! Can I start writing R code now?
