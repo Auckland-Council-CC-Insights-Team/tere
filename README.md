@@ -25,9 +25,7 @@ devtools::install_github("lddurbinAC/awhina")
 ## Example
 
 This is a basic example which shows you how to install and load the most
-useful R packages (known collectively as the tidyverse), and how to
-securely store and retrieve the path to your team’s locally-sync’d
-SharePoint Document Library.
+useful R packages (known collectively as the tidyverse).
 
 ``` r
 library(awhina)
