@@ -4,6 +4,8 @@
       check_renviron(.Renviron)
     Message <cliMessage>
       i You have a .Renviron file! Reading it now...
+    Output
+      [1] TRUE
 
 ---
 
@@ -12,6 +14,8 @@
     Message <cliMessage>
       ! You do not have a .Renviron file, or you passed the incorrect directory path.
       ! Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.
+    Output
+      [1] FALSE
 
 # get_renviron works [plain]
 
