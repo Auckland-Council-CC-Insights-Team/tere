@@ -1,3 +1,25 @@
+#' Efficiently read an Excel file
+#'
+#' Pass the name of an Excel file and instantly read it
+#'
+#' @param filename The name of the file, excluding the file extension (e.g. .xlsx)
+#' @param sheetname The name of the sheet you'd like to read. Defaults to "Sheet1".
+#' @param skip_rows The number of rows to skip before any data is read from the sheet. Default to zero rows skipped.
+#' @param path The full directory path to the file. Default to the file path you stored in .Renviron as MY_SHAREPOINT_FILES.
+#'
+#' @return A tibble
+#' @export
+#'
+#' @examples
+get_excel_file <- function(filename, sheetname = "Sheet1", skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES")) {
+  readxl::read_excel(
+    path = paste0(path, filename, ".xlsx"),
+    sheet = sheetname,
+    skip = skip_rows,
+    .name_repair = janitor::make_clean_names
+  )
+}
+
 #' Load packages
 #'
 #' Given a list of package names, append the purrr package to the list then check if they're all
