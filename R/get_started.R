@@ -13,7 +13,7 @@
 #' @examples
 get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES")) {
   readxl::read_excel(
-    path = paste0(path, filename, ".xlsx"),
+    path = paste0(path, "/", filename, ".xlsx"),
     sheet = sheetname,
     skip = skip_rows,
     .name_repair = janitor::make_clean_names
