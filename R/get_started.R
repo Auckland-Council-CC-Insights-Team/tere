@@ -1,9 +1,9 @@
 #' Efficiently read an Excel file
 #'
-#' Pass the name of an Excel file and instantly read it
+#' Pass the name of an Excel file and instantly read it. Optionally specify a sheet name and other parameters.
 #'
 #' @param filename The name of the file, excluding the file extension (e.g. .xlsx)
-#' @param sheetname The name of the sheet you'd like to read. Defaults to "Sheet1".
+#' @param sheetname The name or position of the sheet you'd like to read. Defaults to position 1.
 #' @param skip_rows The number of rows to skip before any data is read from the sheet. Default to zero rows skipped.
 #' @param path The full directory path to the file. Default to the file path you stored in .Renviron as MY_SHAREPOINT_FILES.
 #'
@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-get_excel_file <- function(filename, sheetname = "Sheet1", skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES")) {
+get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES")) {
   readxl::read_excel(
     path = paste0(path, filename, ".xlsx"),
     sheet = sheetname,
