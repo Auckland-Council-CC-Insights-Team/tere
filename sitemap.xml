@@ -22,9 +22,6 @@
     <loc>https://lddurbinac.github.io/awhina/index.html</loc>
   </url>
   <url>
-    <loc>https://lddurbinac.github.io/awhina/reference/awhina-package.html</loc>
-  </url>
-  <url>
     <loc>https://lddurbinac.github.io/awhina/reference/check_environment_variable.html</loc>
   </url>
   <url>
@@ -50,5 +47,8 @@
   </url>
   <url>
     <loc>https://lddurbinac.github.io/awhina/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://lddurbinac.github.io/awhina/reference/tere-package.html</loc>
   </url>
 </urlset>
