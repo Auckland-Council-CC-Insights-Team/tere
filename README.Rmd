@@ -13,22 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# awhina
+# tere
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lddurbinAC/awhina/actions/workflows/R-CMD-check.yaml)
-[![test-coverage](https://github.com/lddurbinAC/awhina/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/lddurbinAC/awhina/actions/workflows/test-coverage.yaml)
+[![R-CMD-check](https://github.com/lddurbinAC/tere/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lddurbinAC/tere/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/lddurbinAC/tere/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/lddurbinAC/tere/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of awhina is to support kaimahi at Auckland Council when they work with the R programming language.
+The goal of tere is to support kaimahi at Auckland Council when they work with the R programming language.
 
 ## Installation
 
-You can install the development version of awhina from [GitHub](https://github.com/) with:
+You can install the development version of tere from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("lddurbinAC/awhina")
+devtools::install_github("lddurbinAC/tere")
 ```
 
 ## Example
@@ -36,6 +36,6 @@ devtools::install_github("lddurbinAC/awhina")
 This is a basic example which shows you how to install and load the most useful R packages (known collectively as the tidyverse).
 
 ```{r example}
-library(awhina)
+library(tere)
 get_started("tidyverse")
 ```

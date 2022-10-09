@@ -2,12 +2,12 @@
 # CITATION file created with {cffr} R package, v0.2.2
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
- 
+
 cff-version: 1.2.0
-message: 'To cite package "awhina" in publications use:'
+message: 'To cite package "tere" in publications use:'
 type: software
 license: MIT
-title: 'awhina: Simplify the Process of Writing R Code at Auckland Council'
+title: 'tere: Simplify the Process of Writing R Code at Auckland Council'
 version: 0.0.0.9000
 abstract: A set of utility functions for Auckland Council R developers to get up and
   running quickly with the language.
@@ -17,7 +17,7 @@ authors:
   email: lee.durbin@aucklandcouncil.govt.nz
 preferred-citation:
   type: manual
-  title: 'awhina: Simplify the Process of Writing R Code at Auckland Council'
+  title: 'tere: Simplify the Process of Writing R Code at Auckland Council'
   authors:
   - family-names: Durbin
     given-names: Lee

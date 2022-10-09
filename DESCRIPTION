@@ -1,4 +1,4 @@
-Package: awhina
+Package: tere
 Title: Simplify the Process of Writing R Code at Auckland Council
 Version: 0.0.0.9000
 Authors@R: 
@@ -24,4 +24,4 @@ Suggests:
     withr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://lddurbinac.github.io/awhina/
+URL: https://lddurbinac.github.io/tere/
