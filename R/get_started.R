@@ -38,7 +38,7 @@ get_started <- function(package_names) {
     library(p, character.only = TRUE)
   }
 
-  cli::cli_alert_info("All packages installed and loaded. Happy coding!")
+  print("All packages installed and loaded. Happy coding!")
 }
 
 #' Install any packages that are not already installed
@@ -62,11 +62,11 @@ get_packages <- function(packages) {
   install.packages(missing_packages, repos = "http://cran.us.r-project.org")
 
   if(length(missing_packages) > 0) {
-    cli::cli_alert_info(
+    print(
       paste0("The following packages have been installed: ", missing_packages)
     )
   } else {
-    cli::cli_alert_info("You already have these packages installed. Ka rawe!")
+    print("You already have these packages installed. Ka rawe!")
   }
 }
 
@@ -93,11 +93,10 @@ get_file_storage_path <- function(dir_ref = "MY_SHAREPOINT_FILES", renviron_path
 check_renviron <- function(renviron_path) {
   if (file.exists(renviron_path)) {
     readRenviron(renviron_path)
-    cli::cli_alert_info("You have a .Renviron file! Reading it now...")
     return(TRUE)
   } else {
-      cli::cli_alert_warning("You do not have a .Renviron file, or you passed the incorrect directory path.")
-      cli::cli_alert_warning("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.")
+    print("You do not have a .Renviron file, or you passed the incorrect directory path.")
+    print("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass the path to your SharePoint directory when prompted.")
       return(FALSE)
   }
 }
@@ -111,8 +110,8 @@ get_renviron <- function(var_name) {
   if(check_environment_variable(c(var_name))) {
     Sys.getenv(var_name)
   } else {
-    cli::cli_alert_warning(paste0("You have a .Renviron file but the following environment variables are missing: ", var_name))
-    cli::cli_alert_warning("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass, for example, the path to your SharePoint directory when prompted.")
+    print(paste0("You have a .Renviron file but the following environment variables are missing: ", var_name))
+    print("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass, for example, the path to your SharePoint directory when prompted.")
   }
 }
 
@@ -154,6 +153,6 @@ create_environment_variable <- function(dir_ref = "MY_SHAREPOINT_FILES") {
   )
 
   return(
-    cli::cli_alert_info("Successfully created the .Renviron file to store your directory path.")
+    print("Successfully created the .Renviron file to store your directory path.")
     )
 }
