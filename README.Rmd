@@ -27,8 +27,8 @@ The goal of tere is to support kaimahi at Auckland Council when they work with t
 You can install the development version of tere from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("lddurbinAC/tere")
+# install.packages("remotes")
+remotes::install_github("Auckland-Council-CC-Insights-Team/tere")
 ```
 
 ## Example

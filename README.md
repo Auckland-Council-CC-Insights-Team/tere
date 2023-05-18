@@ -18,8 +18,8 @@ You can install the development version of tere from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("lddurbinAC/tere")
+# install.packages("remotes")
+remotes::install_github("Auckland-Council-CC-Insights-Team/tere")
 ```
 
 ## Example
@@ -30,14 +30,14 @@ useful R packages (known collectively as the tidyverse).
 ``` r
 library(tere)
 get_started("tidyverse")
-#> ℹ You already have these packages installed. Ka rawe!
+#> [1] "You already have these packages installed. Ka rawe!"
 #> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.3.6      ✔ purrr   0.3.5 
-#> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-#> ✔ readr   2.1.3      ✔ forcats 0.5.2 
+#> ✔ ggplot2 3.4.0     ✔ purrr   1.0.0
+#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
+#> ✔ tidyr   1.2.1     ✔ stringr 1.5.0
+#> ✔ readr   2.1.3     ✔ forcats 0.5.2
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ All packages installed and loaded. Happy coding!
+#> [1] "All packages installed and loaded. Happy coding!"
 ```
