@@ -3,6 +3,7 @@
 export(create_environment_variable)
 export(get_excel_file)
 export(get_file_storage_path)
+export(get_list_items)
 export(get_packages)
 export(get_started)
 importFrom(utils,install.packages)

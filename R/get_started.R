@@ -90,6 +90,8 @@ get_file_storage_path <- function(dir_ref = "MY_SHAREPOINT_FILES", renviron_path
 #' @param renviron_path Path to the .Renviron file.
 #'
 #' @return Scalar logical indicating if the file was read successfully. Returned invisibly.
+#'
+#' @noRd
 check_renviron <- function(renviron_path) {
   if (file.exists(renviron_path)) {
     readRenviron(renviron_path)
@@ -106,6 +108,8 @@ check_renviron <- function(renviron_path) {
 #' @param var_name Character vector of environment variable name(s).
 #'
 #' @return A vector of the same length as var_name.
+#'
+#' @noRd
 get_renviron <- function(var_name) {
   if(check_environment_variable(c(var_name))) {
     Sys.getenv(var_name)
@@ -123,6 +127,8 @@ get_renviron <- function(var_name) {
 #' @param variable_names a character vector of environment variable names in the .Renviron file.
 #'
 #' @return FALSE if any of the environment variables are not found, otherwise TRUE.
+#'
+#' @noRd
 check_environment_variable <- function(variable_names) {
   if(length(variable_names) == 0 | any(Sys.getenv(variable_names) == "")) {
     return(FALSE)
@@ -155,4 +161,23 @@ create_environment_variable <- function(dir_ref = "MY_SHAREPOINT_FILES") {
   return(
     print("Successfully created the .Renviron file to store your directory path.")
     )
+}
+
+
+#' Make a Data Frame Tidy
+#'
+#' @description Convert a data frame into a tibble, and clean the column names.
+#'
+#' @param data_frame The data frame that needs to be tidied.
+#'
+#' @return A tibble with the same number of columns and rows as the original
+#'   data frame.
+#'
+#' @noRd
+get_tidy_table <- function(data_frame) {
+  tidy_table <- data_frame |>
+    dplyr::as_tibble() |>
+    janitor::clean_names()
+
+  return(tidy_table)
 }
