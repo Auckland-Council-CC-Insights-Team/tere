@@ -5,7 +5,7 @@
 #'
 #' @return An R6 object of class ms_site.
 #'
-#' @noRd
+#' @export
 connect_to_sharepoint <- function(site_name) {
   withr::local_options(list(
     microsoft365r_use_cli_app_id = TRUE,
