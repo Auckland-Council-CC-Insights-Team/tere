@@ -4,14 +4,16 @@
 \alias{update_list_items}
 \title{Update SharePoint List Items}
 \usage{
-update_list_items(sharepoint_list, item_ids, ...)
+update_list_items(site_name, list_name, item_ids, ...)
 }
 \arguments{
-\item{sharepoint_list}{Connection to a SharePoint List}
+\item{site_name}{Name of SharePoint site to which you want to connect.}
 
-\item{item_ids}{Character vector containing a list of IDs to SharePoint List items}
+\item{list_name}{Name of the List to which you are connecting.}
 
-\item{...}{Named character vector}
+\item{item_ids}{Character vector containing a list of IDs to SharePoint List items.}
+
+\item{...}{Named character vector.}
 }
 \value{
 Message to the console
