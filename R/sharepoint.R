@@ -54,7 +54,7 @@ get_list_items <- function(site_name, list_name) {
 update_list_items <- function(site_name, list_name, item_ids, ...){
   sharepoint_site <- connect_to_sharepoint(site_name)
 
-  sharepoint_list <- sharepoint_list$get_list(list_name)
+  sharepoint_list <- sharepoint_site$get_list(list_name)
 
   purrr::walk(
     .x = item_ids,
