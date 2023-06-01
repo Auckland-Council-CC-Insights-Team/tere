@@ -40,3 +40,19 @@ get_list_items <- function(site_name, list_name) {
 
   return(list_items)
 }
+
+
+#' Update SharePoint List Items
+#'
+#' @param sharepoint_list Connection to a SharePoint List
+#' @param item_ids Character vector containing a list of IDs to SharePoint List items
+#' @param ... Named character vector
+#'
+#' @return Message to the console
+#' @export
+update_list_items <- function(sharepoint_list, item_ids, ...){
+  purrr::walk(
+    .x = item_ids,
+    .f = ~sharepoint_list$update_item(id = .x, ...)
+   )
+}
