@@ -10,7 +10,7 @@
 #' @return A tibble
 #' @export
 #'
-get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES"), file_extension = c(".xlsx", ".xls")) {
+get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES"), file_extension = ".xlsx") {
   readxl::read_excel(
     path = paste0(path, "/", filename, file_extension),
     sheet = sheetname,
