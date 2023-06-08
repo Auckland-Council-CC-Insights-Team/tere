@@ -19,8 +19,6 @@ get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_fi
   )
 }
 
-# test
-
 #' Load packages
 #'
 #' Given a list of package names, append the purrr package to the list then check if they're all
