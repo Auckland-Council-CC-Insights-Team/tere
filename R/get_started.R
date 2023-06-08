@@ -6,6 +6,7 @@
 #' @param sheetname The name or position of the sheet you'd like to read. Defaults to position 1.
 #' @param skip_rows The number of rows to skip before any data is read from the sheet. Default to zero rows skipped.
 #' @param path The full directory path to the file. Default to the file path you stored in .Renviron as MY_SHAREPOINT_FILES.
+#' @param file_extension The file extension of the file. Default to .xlsx files.
 #'
 #' @return A tibble
 #' @export
