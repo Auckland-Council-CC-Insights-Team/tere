@@ -1,3 +1,16 @@
+test_that("Excel files can be easily read", {
+  expected <- mtcars |>
+    dplyr::filter(mpg == 21.0) |>
+    nrow()
+
+  actual <- get_excel_file("mtcars", path = test_path("testdata")) |>
+    dplyr::filter(mpg == 21.0) |>
+    nrow()
+
+  expect_equal(actual, expected)
+})
+
+
 test_that("get_file_storage_path works", {
   # .Renviron holds the expected environment variable(s)
   withr::with_tempfile(".Renviron",{
@@ -23,3 +36,4 @@ test_that("a data frame is converted to a tibble with clean column names", {
     c("column_one", "column_two", "column_three")
   )
 })
+
