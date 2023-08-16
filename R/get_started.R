@@ -20,56 +20,6 @@ get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_fi
   )
 }
 
-#' Load packages
-#'
-#' Given a list of package names, append the purrr package to the list then check if they're all
-#' installed (install them if not). Afterwards, load the packages via library().
-#'
-#' @param package_names a character vector of package names.
-#'
-#' @return A stylised message in the console.
-#' @export
-#'
-#' @examples get_started(c("dplyr", "lubridate"))
-get_started <- function(package_names) {
-  package_names_with_purrr <- append(package_names, "purrr")
-  get_packages(package_names_with_purrr)
-
-  for(p in package_names) {
-    library(p, character.only = TRUE)
-  }
-
-  print("All packages installed and loaded. Happy coding!")
-}
-
-#' Install any packages that are not already installed
-#'
-#' Compare a list of package names (including utils) against installed packages, then install any as needed.
-#'
-#' @param packages a character vector of package names.
-#'
-#' @return A stylised message in the console.
-#' @export
-#'
-#' @examples get_packages(c("dplyr", "lubridate"))
-get_packages <- function(packages) {
-  append(packages, "utils")
-
-  missing_packages <- setdiff(
-    packages,
-    rownames(installed.packages())
-    )
-
-  install.packages(missing_packages, repos = "http://cran.us.r-project.org")
-
-  if(length(missing_packages) > 0) {
-    print(
-      paste0("The following packages have been installed: ", missing_packages)
-    )
-  } else {
-    print("You already have these packages installed. Ka rawe!")
-  }
-}
 
 #' Retrieve the full path to the local SharePoint directory where your team's files are stored
 #'
@@ -85,6 +35,7 @@ get_file_storage_path <- function(dir_ref = "MY_SHAREPOINT_FILES", renviron_path
     get_renviron(dir_ref)
   }
 }
+
 
 #' Check that a .Renviron exists
 #'
@@ -104,6 +55,7 @@ check_renviron <- function(renviron_path) {
   }
 }
 
+
 #' Obtain the values of environment variables
 #'
 #' @param var_name Character vector of environment variable name(s).
@@ -119,6 +71,7 @@ get_renviron <- function(var_name) {
     print("Please call create_environment_variable('MY_SHAREPOINT_FILES') and pass, for example, the path to your SharePoint directory when prompted.")
   }
 }
+
 
 #' Check if the user has their environment variables set up
 #'
@@ -137,6 +90,7 @@ check_environment_variable <- function(variable_names) {
     return(TRUE)
   }
 }
+
 
 #' Create a .Renviron file that points to your locally-synchronised SharePoint Document Library
 #'
