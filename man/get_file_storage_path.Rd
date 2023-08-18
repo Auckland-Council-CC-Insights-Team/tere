@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_started.R
 \name{get_file_storage_path}
 \alias{get_file_storage_path}
-\title{Retrieve the full path to the local SharePoint directory where your team's files are stored}
+\title{Install any packages that are not already installed}
 \usage{
 get_file_storage_path(
   dir_ref = "MY_SHAREPOINT_FILES",

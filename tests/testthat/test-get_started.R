@@ -1,31 +1,15 @@
-# cli::test_that_cli(configs = c("plain"), "check_renviron works", {
-#   # .Renviron exists and "renviron_path" points to correct path
-#   withr::with_tempfile(".Renviron",{
-#     writeLines("", .Renviron);
-#     expect_snapshot(check_renviron(.Renviron))
-#   })
-#
-#   # .Renviron may exist but "renviron_path" points to incorrect path
-#   expect_snapshot(check_renviron("fake/path"))
-# })
-#
-# test_that("check_environment_variable works", {
-#   expect_false(check_environment_variable("NON_EXISTENT_VARIABLE"))
-# })
-#
-# cli::test_that_cli(configs = c("plain"), "get_renviron works", {
-#   # .Renviron holds the expected environment variable(s)
-#   withr::with_envvar(
-#     new = c("EXPECTED_VARIABLE" = "a value"),
-#     expect_identical(get_renviron("EXPECTED_VARIABLE"), "a value")
-#     )
-#
-#   # .Renviron does not hold the expected environment variable(s)
-#   withr::with_envvar(
-#     new = c("UNEXPECTED_VARIABLE" = "a value"),
-#     expect_snapshot(get_renviron("EXPECTED_VARIABLE"))
-#   )
-# })
+test_that("Excel files can be easily read", {
+  expected <- mtcars |>
+    dplyr::filter(mpg == 21.0) |>
+    nrow()
+
+  actual <- get_excel_file("mtcars", path = test_path("testdata")) |>
+    dplyr::filter(mpg == 21.0) |>
+    nrow()
+
+  expect_equal(actual, expected)
+})
+
 
 test_that("get_file_storage_path works", {
   # .Renviron holds the expected environment variable(s)
@@ -34,3 +18,22 @@ test_that("get_file_storage_path works", {
     expect_identical(get_file_storage_path("SHAREPOINT_FILE_STORAGE", .Renviron), "path/to/files")
   })
 })
+
+
+test_that("a data frame is converted to a tibble with clean column names", {
+  L3 <- LETTERS[1:3]
+  char <- sample(L3, 10, replace = TRUE)
+
+  data <- data.frame(
+    "Column One" = 1,
+    "Column Two" = 1:10,
+    "Column Three" = char,
+    check.names = FALSE
+  )
+
+  expect_equal(
+    names(get_tidy_table(data)),
+    c("column_one", "column_two", "column_three")
+  )
+})
+

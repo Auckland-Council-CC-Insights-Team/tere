@@ -29,15 +29,5 @@ useful R packages (known collectively as the tidyverse).
 
 ``` r
 library(tere)
-get_started("tidyverse")
-#> [1] "You already have these packages installed. Ka rawe!"
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0     ✔ purrr   1.0.0
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.2.1     ✔ stringr 1.5.0
-#> ✔ readr   2.1.3     ✔ forcats 0.5.2
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> [1] "All packages installed and loaded. Happy coding!"
+get_excel_file("my_excel_file", "sheet_name")
 ```
