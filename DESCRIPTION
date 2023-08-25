@@ -15,8 +15,11 @@ Imports:
     dplyr (>= 1.1.0),
     here,
     janitor,
+    lubridate,
     Microsoft365R (>= 2.3.4),
+    purrr,
     readxl,
+    stringr,
     utils
 Suggests: 
     knitr,
