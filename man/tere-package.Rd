@@ -12,6 +12,7 @@ A set of utility functions for Auckland Council R developers to get up and runni
 Useful links:
 \itemize{
   \item \url{https://lddurbinac.github.io/tere/}
+  \item \url{https://auckland-council-cc-insights-team.github.io/tere/}
 }
 
 }
