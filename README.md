@@ -24,8 +24,8 @@ remotes::install_github("Auckland-Council-CC-Insights-Team/tere")
 
 ## Example
 
-This is a basic example which shows you how to install and load the most
-useful R packages (known collectively as the tidyverse).
+This is a basic example which shows you how to quickly read an Excel
+file:
 
 ``` r
 library(tere)

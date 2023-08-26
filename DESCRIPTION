@@ -15,8 +15,11 @@ Imports:
     dplyr (>= 1.1.0),
     here,
     janitor,
+    lubridate,
     Microsoft365R (>= 2.3.4),
+    purrr,
     readxl,
+    stringr,
     utils
 Suggests: 
     knitr,
@@ -25,4 +28,4 @@ Suggests:
     withr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://lddurbinac.github.io/tere/
+URL: https://lddurbinac.github.io/tere/, https://auckland-council-cc-insights-team.github.io/tere/
