@@ -3,8 +3,6 @@
 export(connect_to_sharepoint)
 export(create_environment_variable)
 export(fy_to_date)
-export(get_data_alias_table)
-export(get_data_register)
 export(get_excel_file)
 export(get_file_storage_path)
 export(get_list_items)
