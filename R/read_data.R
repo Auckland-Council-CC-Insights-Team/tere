@@ -8,7 +8,7 @@
 #'
 #' @return File names as a named fs_path character vector.
 #'
-#' @noRd
+#' @export
 get_file_name <- function(file_path = tere::get_file_storage_path(), folder_name)
 {
   file_name <- fs::dir_ls(paste0(file_path, folder_name)) |>
@@ -30,7 +30,7 @@ get_file_name <- function(file_path = tere::get_file_storage_path(), folder_name
 #'
 #' @return Data from the file(s)
 #'
-#' @noRd
+#' @export
 read_file <- function(file_names
                       , file_path = paste0(tere::get_file_storage_path(), folder_name)
                       , file_type = c("excel", "csv", "txt")
@@ -155,7 +155,7 @@ read_tsv_file <- function(file_names
 #'
 #' @return A tibble.
 #'
-#' @noRd
+#' @export
 bind_dataframes <- function(data, file_names) {
   names(data) <- file_names
 
