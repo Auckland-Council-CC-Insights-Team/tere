@@ -32,7 +32,7 @@ get_file_name <- function(file_path = tere::get_file_storage_path(), folder_name
 #'
 #' @noRd
 read_file <- function(file_names
-                      , file_path = paste0(tere::get_file_storage_path(), "/subscription_database")
+                      , file_path = paste0(tere::get_file_storage_path(), folder_name)
                       , file_type = c("excel", "csv", "txt")
                       , file_extension = c(".xlsx", ".xls", ".csv")
                       , sheet = 1
@@ -72,7 +72,7 @@ read_file <- function(file_names
 #'
 #' @noRd
 read_excel_file <- function(file_names
-                            , file_path = paste0(tere::get_file_storage_path(), "/subscription_database")
+                            , file_path = paste0(tere::get_file_storage_path(), folder_name)
                             , file_extension = c(".xlsx", ".xls")
                             , sheet = 1
                             , skip = 0) {
@@ -102,7 +102,7 @@ read_excel_file <- function(file_names
 #'
 #' @noRd
 read_csv_file <- function(file_names
-                          , file_path = paste0(tere::get_file_storage_path(), "/subscription_database")
+                          , file_path = paste0(tere::get_file_storage_path(), folder_name)
                           , skip = 0) {
   data <- purrr::map(
     .x = paste0(file_path, "/", file_names, ".csv")
@@ -130,7 +130,7 @@ read_csv_file <- function(file_names
 #'
 #' @noRd
 read_tsv_file <- function(file_names
-                          , file_path = paste0(tere::get_file_storage_path(), "/subscription_database")
+                          , file_path = paste0(tere::get_file_storage_path(), folder_name)
                           , skip = 0) {
   data <- purrr::map(
     .x = paste0(file_path, "/", file_names, ".tsv")
@@ -164,50 +164,4 @@ bind_dataframes <- function(data, file_names) {
     janitor::clean_names()
 
   return(data_with_names)
-}
-
-
-#' Get Register Data From MS List
-#'
-#' @description Read data from the Libraries Subscription Databases Register MS
-#'   List and return it as a dataframe.
-#'
-#' @return A dataframe containing data from the Libraries Subscription Databases
-#'   Register
-#'
-#' @export
-get_data_register <- function()
-{
-  data_register <- tere::get_list_items(
-    "ConnectedCommunitiesInsightsAnalysisTeam"
-    , "Libraries Subscription Databases Register") |>
-    janitor::clean_names()
-
-  return(data_register)
-}
-
-
-#' Get Alias Table Data From MS List
-#'
-#' @description Read data from the Libraries Subscription Databases Alias Table
-#'   MS List and return it as a dataframe.
-#'
-#' @return A dataframe containing five columns from the alias table
-#'
-#' @export
-get_data_alias_table <- function()
-{
-  data_alias_table <- tere::get_list_items(
-    "ConnectedCommunitiesInsightsAnalysisTeam"
-    , "subscription_database_alias_table") |>
-    janitor::clean_names()|>
-    select(
-      source_database_name
-      , clean_database_name
-      , register_database_name
-      , sierra_record_number
-      , source
-    )
-
-  return(data_alias_table)
 }
