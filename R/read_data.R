@@ -89,7 +89,7 @@ read_excel_file <- function(file_names
                                  , path = file_path
                                  , file_extension = file_extension
                                  , sheet = sheet
-                                 , col_types = col_types
+                                 , col_types = NULL
                                  , skip_rows = skip)
   )
 
