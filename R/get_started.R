@@ -7,14 +7,16 @@
 #' @param skip_rows The number of rows to skip before any data is read from the sheet. Default to zero rows skipped.
 #' @param path The full directory path to the file. Default to the file path you stored in .Renviron as MY_SHAREPOINT_FILES.
 #' @param file_extension The file extension of the file. Default to .xlsx files.
+#' @param col_types The data type for the column. Default to NULL
 #'
 #' @return A tibble
 #' @export
 #'
-get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES"), file_extension = ".xlsx") {
+get_excel_file <- function(filename, sheetname = 1, skip_rows = 0, path = get_file_storage_path("MY_SHAREPOINT_FILES"), col_types = NULL, file_extension = ".xlsx") {
   readxl::read_excel(
     path = paste0(path, "/", filename, file_extension),
     sheet = sheetname,
+    col_types = col_types,
     skip = skip_rows,
     .name_repair = janitor::make_clean_names
   )

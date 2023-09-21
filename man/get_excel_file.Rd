@@ -9,6 +9,7 @@ get_excel_file(
   sheetname = 1,
   skip_rows = 0,
   path = get_file_storage_path("MY_SHAREPOINT_FILES"),
+  col_types = NULL,
   file_extension = ".xlsx"
 )
 }
@@ -20,6 +21,8 @@ get_excel_file(
 \item{skip_rows}{The number of rows to skip before any data is read from the sheet. Default to zero rows skipped.}
 
 \item{path}{The full directory path to the file. Default to the file path you stored in .Renviron as MY_SHAREPOINT_FILES.}
+
+\item{col_types}{The data type for the column. Default to NULL}
 
 \item{file_extension}{The file extension of the file. Default to .xlsx files.}
 }
