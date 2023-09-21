@@ -54,13 +54,18 @@
 <span>  file_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"excel"</span>, <span class="st">"csv"</span>, <span class="st">"txt"</span><span class="op">)</span>,</span>
 <span>  file_extension <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">".xlsx"</span>, <span class="st">".xls"</span>, <span class="st">".csv"</span><span class="op">)</span>,</span>
 <span>  sheet <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  col_types <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  skip <span class="op">=</span> <span class="fl">0</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>file_path</dt>
+    <dl><dt>file_names</dt>
+<dd><p>The name of the file(s) to be read.</p></dd>
+
+
+<dt>file_path</dt>
 <dd><p>The path of the file(s) to be read</p></dd>
 
 
@@ -68,17 +73,21 @@
 <dd><p>The format of the file(s) to be read.</p></dd>
 
 
+<dt>file_extension</dt>
+<dd><p>The file extension.</p></dd>
+
+
 <dt>sheet</dt>
 <dd><p>The sheet number in the excel file(s) to be read. Defaults to
 the first sheet.</p></dd>
 
 
+<dt>col_types</dt>
+<dd><p>The data type for the column. Default to NULL</p></dd>
+
+
 <dt>skip</dt>
 <dd><p>The number of rows to skip before reading in the data.</p></dd>
-
-
-<dt>file_name</dt>
-<dd><p>The name of the file(s) to be read.</p></dd>
 
 </dl></div>
     <div class="section level2">
