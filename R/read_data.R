@@ -18,6 +18,8 @@ get_file_name <- function(file_path = tere::get_file_storage_path(), folder_name
   return(file_name)
 }
 
+# preparing fixes for read functions
+
 
 #' Read Files
 #'
@@ -87,7 +89,7 @@ read_excel_file <- function(file_names
                                  , path = file_path
                                  , file_extension = file_extension
                                  , sheet = sheet
-                                 , col_types = col_types
+                                 , col_types = NULL
                                  , skip_rows = skip)
   )
 
