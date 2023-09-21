@@ -13,11 +13,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     dplyr (>= 1.1.0),
+    fs,
     here,
     janitor,
     lubridate,
     Microsoft365R (>= 2.3.4),
     purrr,
+    readr,
     readxl,
     stringr,
     utils

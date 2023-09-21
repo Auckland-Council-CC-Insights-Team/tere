@@ -21,11 +21,13 @@ get_file_name <- function(file_path = tere::get_file_storage_path(), folder_name
 
 #' Read Files
 #'
-#' @param file_name The name of the file(s) to be read.
+#' @param file_names The name of the file(s) to be read.
 #' @param file_path The path of the file(s) to be read
 #' @param file_type The format of the file(s) to be read.
+#' @param file_extension The file extension.
 #' @param sheet The sheet number in the excel file(s) to be read. Defaults to
 #'   the first sheet.
+#' @param col_types The data type for the column. Default to NULL
 #' @param skip The number of rows to skip before reading in the data.
 #'
 #' @return Data from the file(s)
@@ -36,6 +38,7 @@ read_file <- function(file_names
                       , file_type = c("excel", "csv", "txt")
                       , file_extension = c(".xlsx", ".xls", ".csv")
                       , sheet = 1
+                      , col_types = NULL
                       , skip = 0)
 {
   if(file_type == "excel")
@@ -60,11 +63,12 @@ read_file <- function(file_names
 
 #' Read An Excel File
 #'
-#' @param file_name The name of the Excel file, without the file extension.
+#' @param file_names The name of the Excel file, without the file extension.
 #' @param file_path The path to the Excel file.
 #' @param file_extension The file extension for this Excel file, either '.xlsx'
 #'   or '.xls'.
 #' @param sheet The sheet numbers to be read, by default the first sheet.
+#' @param col_types The data type for the column. Default to NULL
 #' @param skip The number of rows to skip before reading, by default zero rows
 #'   are skipped.
 #'
@@ -75,6 +79,7 @@ read_excel_file <- function(file_names
                             , file_path = paste0(tere::get_file_storage_path(), folder_name)
                             , file_extension = c(".xlsx", ".xls")
                             , sheet = 1
+                            , col_types = NULL
                             , skip = 0) {
   data <- purrr::map(
     .x = file_names
@@ -82,6 +87,7 @@ read_excel_file <- function(file_names
                                  , path = file_path
                                  , file_extension = file_extension
                                  , sheet = sheet
+                                 , col_types = col_types
                                  , skip_rows = skip)
   )
 
@@ -93,7 +99,7 @@ read_excel_file <- function(file_names
 
 #' Read A CSV File
 #'
-#' @param file_name The name of the CSV file, without the file extension.
+#' @param file_names The name of the CSV file, without the file extension.
 #' @param file_path The path to the CSV file.
 #' @param skip The number of rows to skip before reading, by default zero rows
 #'   are skipped.
@@ -121,7 +127,7 @@ read_csv_file <- function(file_names
 
 #' Read A TSV File
 #'
-#' @param file_name The name of the TSV file, without the file extension.
+#' @param file_names The name of the TSV file, without the file extension.
 #' @param file_path The path to the TSV file.
 #' @param skip The number of rows to skip before reading, by default zero rows
 #'   are skipped.
