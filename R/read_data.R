@@ -46,7 +46,7 @@ read_file <- function(file_names
   if(file_type == "excel")
   {
     data_with_names <- read_excel_file(file_names, file_path, file_extension,
-                                       sheet, skip)
+                                       sheet, col_types, skip)
   }
 
   if(file_type == "csv")
