@@ -9,6 +9,9 @@
 #' @export
 get_file_properties <- function(folder_path)
 {
+  file_paths <- file_names <- file_extensions <-
+    file_sizes <- current_datetime <- NULL
+
   file_paths <- list.files(folder_path, full.names = TRUE)
 
   file_names <- list.files(folder_path, full.names = FALSE)
