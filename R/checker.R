@@ -18,7 +18,7 @@ get_file_properties <- function(folder_path)
 
   file_extensions <- tools::file_ext(file_names)
 
-  file_sizes <- file.info(file_paths)$size / 1024 # convert to KB
+  file_sizes_kb <- file.info(file_paths)$size / 1024 # convert to KB
 
   current_datetime <- Sys.time()
 
@@ -26,7 +26,7 @@ get_file_properties <- function(folder_path)
     file_path = file_paths
     , file_name = file_names
     , file_extension = file_extensions
-    , file_size = file_sizes
+    , file_size_kb = file_sizes_kb
     , current_datetime
   )
 
