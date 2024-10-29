@@ -32,3 +32,46 @@ get_file_properties <- function(folder_path)
 
   return(df)
 }
+
+#' Check File Properties
+#'
+#' @description Check file properties and print a warning if the check fails.
+#'
+#'
+#' @param df A dataframe
+#'
+#' @return A list containing two logical items
+#'
+#' @export
+check_file_properties <- function(df)
+{
+  check_file_extension <- df |>
+    dplyr::select(file_extension) |>
+    dplyr::distinct(file_extension) |>
+    length() == 1
+
+  check_file_size <- df |>
+    dplyr::select(file_size) |>
+    dplyr::filter(
+      !is.na(file_size) | file_size == 0
+    ) |>
+    nrow() == 0
+
+  results <- list(
+    check_file_extension = check_file_extension
+    , check_file_size = check_file_size
+  )
+
+  if (!check_file_extension) {
+    # we expect all files to have the same file extension
+    message("Error: File extension check failed. There are one or more different file extensions in this folder")
+  }
+
+  if (check_file_size) {
+    # we expect all files to be greater than 0
+    # therefore show error message if check_file_size == TRUE
+    message("Error: File size check failed. There are one or more files that are 0 KB")
+  }
+
+  return(results)
+}
