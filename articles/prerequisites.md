@@ -1,0 +1,267 @@
+# Getting Started with R at Te Kaunihera o Tāmaki Makaurau
+
+## Hello, what’s this?
+
+Kia ora, and congratulations on choosing to use the R programming
+language at Te Kaunihera o Tāmaki Makaurau (Auckland Council)!
+
+## Wait, why should I learn R?
+
+That’s a great question!
+
+You’re probably familiar with using Excel for working with data. Excel
+is a powerful and versatile tool that we all have access to, but I’m
+guessing you’re here because you see the limitations of that software:
+
+- **Things can go wrong easily**: a simple mouse click can change
+  important data; a stray keyboard entry can erase a crucial formula in
+  cell B:16, without which the value you need in cell AB:16 won’t show.
+  Nobody wants this.
+- **You can’t reproduce things**: all that work you put into preparing a
+  *beautiful* pivot table from this year’s data? You’ll need to do a lot
+  of copying, pasting, and tweaking to get it working with next year’s
+  data. Plus: only you understand how everything in those cells work.
+- **It keeps crashing**: as your spreadsheets get bigger and bigger, as
+  you start adding pivot tables and charts and all kinds of things, it’s
+  going to take a while to load that onto your screen, and you run the
+  risk of losing everything when it crashes as you’re making important
+  changes.
+- **It changes things in unexpected ways**: you pasted in some dates
+  that Excel thinks are numbers, or numbers it thinks are dates. This
+  kind of thing can [literally cost
+  lives](https://www.bbc.com/news/technology-54423988).
+
+If it feels like you’re fighting against the tool, or that it feels like
+it’s taken too long to do what you need, then you’re in the right place.
+By choosing to work with data in R, you’ll experience many benefits over
+time:
+
+- **You’re in control**: R keeps your data analysis separate from the
+  data itself; this means you’re never in danger of losing data or
+  accidentally changing data, because you never need to open the data
+  file to begin with. If your R script isn’t doing what you’d intended,
+  no sweat: just change the script, knowing your original data source
+  remains untouched.
+- **You don’t need to re-invent the wheel every time**: R is built on
+  functions, and these functions can be used multiple times to achieve
+  similar outcomes from different data sources. You can write a single
+  script that will load a data set, tidy it up, produce beautiful
+  charts, and output the files you need. If you need those same charts
+  and files from next year’s data, just point your script to that data
+  instead… and you’re done! When you get good at this stuff, you can
+  even write your own functions; magic!
+- **It’s not going to give your computer a hard time**: R will read all
+  kinds of data files, no matter how big they are. It’s a programming
+  language specifically designed to work with lots of data, but because
+  the scripts you write are just little files of text you’re not going
+  to lose work because the file crashes.
+- **It will only do what you tell it to do**: this comes back to our
+  first point; because you’ll be working with data using code when you
+  choose to use R, it means it will only perform the operations you tell
+  it to: no more mysteriously re-formatted cells!
+
+Best of all, R is completely free! It’s also supported by a huge
+community of users around the world who are more than happy to help, and
+some of [the very best learning materials](https://r4ds.had.co.nz/) are
+free as well.
+
+Oh, and did I mention it was created right here in Tāmaki Makaurau in
+the 1990s? You have [Ross
+Ihaka](https://www.teaomaori.news/statistics-legend-ross-ihaka-reflects-on-his-revolutionary-software)
+(Ngāti Kahungunu, Rangitāne) to thank for that. In 2022 he was profiled
+on the Te Ao with Moana show, and you can watch it below:
+
+# An error occurred.
+
+Unable to execute JavaScript.
+
+## Alright I’m convinced, how do I get started?
+
+Ka rawe, that’s the spirit! Let’s get R and R Studio Desktop loaded onto
+your machine. You’ll find both of them in Software Centre: just search
+“R for Windows” and “RStudio” if you can’t see them.
+
+![R for Windows and R Studio Desktop can be found in Software Centre;
+the versions you see might be different from the time of
+writing](softwarecentre_r.png "Software Centre screenshot")
+
+R for Windows and R Studio Desktop can be found in Software Centre; the
+versions you see might be different from the time of writing
+
+## What’s this about R Studio?
+
+Oh, that’s right. R Studio Desktop is something called an integrated
+development environment, or IDE. It’s just a fancy way of describing a
+bit of software that makes it easy to write R code. You don’t have to
+install R Studio Desktop, but it will make your life a lot easier as you
+get stuck into writing code using R.
+
+## Sounds good. They’re installed, what next?
+
+It’s a good idea to set a default working directory in R Studio. This is
+where you will store all of your R code, and it’s good to have it all
+one place and point R Studio to that place.
+
+First, I suggest creating a new folder in your OneDrive and name it
+something like “Code”. Next, open R Studio Desktop and select Tools from
+the top menu, then click on Global Options. You’ll see a screen pop up
+like the one below, with a Browse button next to where the default
+working directory path shows up. Go ahead and click Browse, then
+navigate to the “Code” (or similar) folder you just created and click
+“Open”.
+
+![You can point R Studio Desktop to your default working directory in
+Global
+Settings](working_directory_settings.png "R Studio Desktop Global Settings screenshot")
+
+You can point R Studio Desktop to your default working directory in
+Global Settings
+
+It’s not a bad idea to select “Never” next to the option “Restore data
+to .Rdata workspace on exit” while you’re there, which makes sure you’re
+starting from cleaning slate when you re-open R Studio Desktop in
+future.
+
+## Sweet! Can I start writing R code now?
+
+I like your enthuiasm! Although you’ve made the first steps, there’s one
+more thing we should install that you’ll thank your future self for:
+Git. This isn’t available in Software Centre, but you can download it
+for free from the [Git for Windows website](https://gitforwindows.org/).
+Go ahead and click that big ol’ download button and keep hitting “Next”
+until it’s done.
+
+## Git? Why do I need that?
+
+Do you find yourself saving spreadsheets as “version 1”, “version 2”,
+“final version”, “final FINAL version”, “final FINAL version edited”?
+Yeah, you don’t need to do that anymore when you use R + Git together.
+
+Git will keep track of your files as you change them, so if you need to
+revert to an earlier version (or just consult an earlier version to
+understand how you got to where you are with your code), then Git will
+allow you to do that.
+
+Did I mention it’s free? Open source is a beautiful thing.
+
+## Okay, I’ve got R and R Studio and Git. Is there anything else I need?
+
+You’re doing great, and you’ve *nearly* got everything you need. Let’s
+get cracking with R by installing your very first package. Fire up R
+Studio Desktop and in the cons–
+
+## Woah slow down. What the heck is a package?
+
+Oh, sorry. A package is a bunch of code written by someone else to help
+you do things in R.
+
+R is built from packages, so you’re going to be using a lot of them. I
+wrote one myself to help kaimahi (staff) get up and running with coding
+in R. It’s called awhina, because it *supports* as you start working in
+R. In fact, this web page you’re looking at was built as part of that
+package. Pretty cool huh?
+
+## That’s very nice, but isn’t R good enough on its own without these packages?
+
+When you install R, you’re installing what’s called Base R or Core R.
+Once upon a time this was the code written by Ross Ihaka and his
+co-creator Robert Gentleman at the University of Auckland, but it’s
+evolved a lot since then. Still, there’s only so much that base code can
+do, and it all has to be maintained by a small, dedicated group of
+volunteers; it’s not in their interests for the base code to do all
+kinds of things that may only benefit a few people, so that’s why we
+have packages.
+
+## So packages are like add-ons to the original R code?
+
+I hadn’t thought of it like that before, that’s actually very
+insightful.
+
+## Thanks. Anyway, you were saying…?
+
+Oh right, yes let’s install your very first package! To do this you’ll
+need to write the following command in the console:
+`install.packages("devtools")`
+
+## I have two questions. First, where’s the console?
+
+Ah, yes the console is that window at the bottom left in R Studio. It
+looks like this:
+
+![The R Studio Desktop console is on the bottom
+left](rstudio-console.png "R Studio Desktop screenshot")
+
+The R Studio Desktop console is on the bottom left
+
+## Got it. Second question: why do I seem to be installing something called “devtools”? Didn’t you say your package is called “awhina”?
+
+Good spot! That’s right, we’re installing devtools first *in order* to
+install awhina.
+
+You see, awhina was only designed for kaimahi at Auckland Council so
+it’ll never be “officially” released. Because of this, we need a special
+command to install it that’s available to us via the devtools package…
+which, as you can probably guess, *does* have an “official” release so
+we can use
+[`install.packages()`](https://rdrr.io/r/utils/install.packages.html) to
+get that one.
+
+## Installing a package to install a package. Gotcha. But isn’t Awhina where I go for ICT support?
+
+That’s right, and you probably know that “awhina” is a word in te reo
+Māori that means “help” or “support”. Similarly to how the Awhina you
+navigate to for ICT help supports your work, *this* awhina supports your
+transition into working with data in R.
+
+## Alright I’ve installed devtools, so how do I get awhina?
+
+That’s easy, just pop the following command into the console and hit
+Enter: `devtools::install_github("lddurbinAC/awhina")`
+
+## Done! Now what?
+
+Well my friend, that’s up to you. You’ve got R, R Studio Desktop, Git
+for Windows, and two handy packages (devtools and awhina). The next
+steps are beyond the scope of this little primer, although there’s
+probably one other thing you *might* want to consider…
+
+## Not another package?
+
+Well, there are always other packages to install but no. You should
+probably synchronise your team’s SharePoint Document Library to your
+local machine.
+
+## That makes no sense
+
+Ah, that might be because your team aren’t managing files via
+SharePoint. You should probably look into that. We do this in the
+Connected Communities Insights and Analysis Team and it’s an effective
+way to manage files. If you’re curious, reach out to us and we can
+advise.
+
+## Just for argument’s sake, let’s assume we *are* doing that. Then what?
+
+That’s the synchronising bit. In order for R to read the data files your
+team is working with, they need to be available on your local machine.
+To achieve this, navigate to your team’s SharePoint Document Library and
+click the “Sync” option at the top. It looks like this:
+
+![The Sync button will make the files in SharePoint available on your
+computer](sharepoint_sync.png "SharePoint Sync button")
+
+The Sync button will make the files in SharePoint available on your
+computer
+
+You may need to sign into OneDrive on your machine. Once that’s all
+done, open up Windows Explorer and you’ll see “Auckland Council” on the
+left, above your OneDrive folder. Click to expand and you should see
+your team’s SharePoint Document Library there.
+
+## Great! Where do I go for further help with all of this?
+
+You’re in the right place! Browse around this website and you should
+find heaps of useful info. This page was written by the Insights and
+Analysis Team in Connected Communities, so you’re always welcome to
+reach out to us too.
+
+Good luck my friend!
