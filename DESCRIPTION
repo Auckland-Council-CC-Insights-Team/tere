@@ -22,7 +22,8 @@ Imports:
     readr,
     readxl,
     stringr,
-    utils
+    utils,
+    tibble
 Suggests: 
     knitr,
     rmarkdown,
